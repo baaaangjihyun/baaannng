@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url('back.jpg'); /* 이미지 경로를 적절하게 수정하세요 */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .one {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="back"></section>
+
+    <script type="text/javascript">
+        var a = ["one", "two", "three", "four", "five", "six"];
+
+        for (var i = 0; i < 100; i++) {
+            var t = document.createElement("img");
+            t.src = a[randomBH(0, 5)] + ".png"; /* 이미지 파일 경로를 적절하게 수정하세요 */
+            t.className = "one";
+            t.style.width = randomBH(20, 130) + "px";
+            t.style.height = "auto";
+            t.style.left = Math.random() * window.innerWidth + "px"; 
+            t.style.top = Math.random() * window.innerHeight + "px"; 
+            document.body.appendChild(t);
+        }
+
+        
+        function randomBH(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</body>
+</html>
